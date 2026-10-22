@@ -2,27 +2,86 @@ import { Link } from 'react-router-dom'
 
 function Hero() {
   return (
-    <section className="items-center gap-12 max-w-6xl mx-auto px-8 py-20 flex flex-col md:flex-row">
-        <div className="flex-1">
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-                Phillip
-            </h1>
-            <h2 className="mt-3 text-xl md:text-2xl font-semibold text-blue-600">
-                Software Developer
-            </h2>
-            <p className="mt-4 text-gray-600 leading-relaxed max-w-xl">
-                Software developer interested in building a website portfolio and creating things with my mind
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 mt-6">
-                <Link to="/projects" className="text-center px-5 py-3 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors">View Projects</Link>
-                <a href="#" className="text-center px-5 py-3 rounded-lg bg-gray-100 text-gray-900 font-medium hover:bg-gray-200 transition-colors">Resume</a>
-            </div>
+    <section className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-16 md:pt-24 pb-24 md:pb-32">
+
+      {/* Small introduction label */}
+      <div className="flex items-center gap-4 mb-10 md:mb-14">
+        <span className="text-xs font-semibold uppercase tracking-[0.2em]">
+          Software Developer
+        </span>
+
+        <div className="h-px flex-1 bg-black/20"></div>
+
+        <span className="hidden sm:block text-xs uppercase tracking-[0.2em] text-black/50">
+          Atlanta, GA
+        </span>
+      </div>
+
+      {/* Main statement */}
+      <div className="max-w-5xl">
+        <h1 className="text-[clamp(3.2rem,8vw,7.5rem)] font-medium leading-[0.92] tracking-[-0.055em]">
+          I build, test,
+          <br />
+          and improve software
+          <br />
+          that solves real problems.
+        </h1>
+      </div>
+
+      {/* Lower hero */}
+      <div className="grid md:grid-cols-12 gap-10 md:gap-8 mt-16 md:mt-24">
+
+        {/* Identity / description */}
+        <div className="md:col-span-5 md:col-start-1">
+          <p className="text-xs uppercase tracking-[0.2em] text-black/50 mb-4">
+            Phillip Vu
+          </p>
+
+          <p className="text-lg md:text-xl leading-relaxed max-w-md">
+            Information Technology graduate focused on software development,
+            testing, and building thoughtful digital experiences.
+          </p>
+
+          <div className="flex flex-wrap gap-x-8 gap-y-4 mt-8">
+            <Link
+              to="/projects"
+              className="group inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.12em]"
+            >
+              View my work
+              <span className="transition-transform group-hover:translate-x-1">
+                ↗
+              </span>
+            </Link>
+
+            <a
+              href="#resume"
+              className="group inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.12em]"
+            >
+              Resume
+              <span className="transition-transform group-hover:translate-y-1">
+                ↓
+              </span>
+            </a>
+          </div>
         </div>
-        <div className='flex-1 flex justify-center'>
-            <div className="w-72 h-80 bg-gray-100 rounded-2xl flex items-center justify-center text-gray-500">
-                Photo
-            </div>
+
+        {/* Photo */}
+        <div className="md:col-span-5 md:col-start-8">
+          <div className="aspect-[4/5] bg-[#dedbd2] overflow-hidden">
+            <img
+              src="/phillip-vu.jpeg"
+              alt="Phillip Vu"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          <div className="flex justify-between mt-3 text-[11px] uppercase tracking-[0.15em] text-black/50">
+            <span>Phillip Vu</span>
+            <span>Software Developer</span>
+          </div>
         </div>
+
+      </div>
     </section>
   )
 }
